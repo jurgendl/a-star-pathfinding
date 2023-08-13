@@ -282,11 +282,8 @@
                 n = n.filter(n => !this.isBlockedByObstacle(point, n));
                 // filter out those blocked by walls
                 n = n.filter(n => !this.isBlockedByWall(point, n));
-                // set parent and update label showing origin of parent (arrow)
-                n.forEach(n => {
-                    n.parent = point;
-                    if (updateGridVisually) n.label = this.updateLabel(n.parent, n);
-                });
+                // set parent
+                n.forEach(n => n.parent = point);
                 return n;
             }
 
@@ -482,15 +479,17 @@
                     // recalculate f
                     const g = this.current.g + this.g(point, this.current);
                     if (g < point.g) {
-                        point.g = g;
+                        // h doesn't change /* point.h = this.h(point, this.goal); */
+                        point.g = g; // g is calculate above
                         point.f = point.h + point.g;
                         point.parent = this.current;
                         if (updateGridVisually) if (point.h > 0) {
                             const docNode = this.docNode(point);
                             docNode.classList.add('adjusted');
+                            point.label = this.updateLabel(this.current, point);
                             docNode.querySelector('.g').innerHTML = "g=" + point.g;
                             docNode.querySelector('.f').innerHTML = "f=" + point.f;
-                            docNode.querySelector('.parent').innerHTML = this.point.label = updateLabel(this.current, point);
+                            docNode.querySelector('.parent').innerHTML = point.label;
                         }
                     }
                 });
@@ -500,9 +499,11 @@
                     point.h = this.h(point, this.goal);
                     point.g = this.current.g + this.g(point, this.current);
                     point.f = point.h + point.g;
+                    // parent is already set in possibleNeighboursOf
                     if (updateGridVisually) if (point.h > 0) {
                         const docNode = this.docNode(point);
                         docNode.classList.add('open');
+                        point.label = this.updateLabel(this.current, point);
                         docNode.innerHTML = "<div><div class='light coord'>(r:" + point.r + ",c:" + point.c + ")</div><div class='light h'>h=" + point.h + "</div><div class='light g'>g=" + point.g + "</div><div class='dark f'>f=" + point.f + "</div><div class='light parent'>" + point.label + "</div><div class='dark order'>&nbsp;</div></div>";
                     }
                 });
