@@ -622,8 +622,7 @@
                 let cellOptions = [];
                 for (let ri = 0; ri < mazeWalker.rows; ri++) {
                     for (let ci = 0; ci < mazeWalker.columns; ci++) {
-                        const cellOption = coordinate(ri, ci);
-                        cellOptions.push(cellOption);
+                        cellOptions.push(coordinate(ri, ci));
                     }
                 }
                 console.log("columns=" + mazeWalker.columns, "rows=" + mazeWalker.rows, "cellPicker", cellOptions);
