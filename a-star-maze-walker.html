@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    https://www.youtube.com/watch?v=T8mgXpW1_vc&ab_channel=KyleStone
+    https://www.gamedev.net/tutorials/programming/artificial-intelligence/a-pathfinding-for-beginners-r2003/
+    https://blog.bitsrc.io/advanced-data-structures-implementing-the-a-algorithm-in-javascript-5ae1e8a4ab2f
+    https://www.geeksforgeeks.org/a-search-algorithm/
+    https://www.youtube.com/watch?v=-L-WgKMFuhE&ab_channel=SebastianLague
+    https://github.com/SebLague/Pathfinding/blob/master/Episode%2001%20-%20pseudocode/Pseudocode
+    https://www.omnicalculator.com/math/manhattan-distance
+    https://en.wikipedia.org/wiki/Taxicab_geometry
+    https://iq.opengenus.org/euclidean-vs-manhattan-vs-chebyshev-distance/
+	https://www.youtube.com/watch?v=eSOJ3ARN5FM&ab_channel=ComputerScience
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A* Pathfinding</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="a-star-maze-walker.css">
+</head>
+
+<body>
+    <a href="?">[Home]</a>
+    <a href="?" id="rnd">[Random]</a>
+    <a href="?" id="save">[Save]</a>
+    <a href="?" id="toggle">[Toggle cut corners]</a>
+    <br><br>
+    <button id="next">Next</button>
+    <button id="auto">Auto</button>
+    <br><br>
+    <span class="start">START</span>
+    <span class="goal">GOAL</span>
+    <span class="blocked">BLOCKED</span>
+    <span class="open">OPEN</span>
+    <span class="adjusted">OPEN (recalculate because shorter path was found)</span>
+    <span class="current">LOWEST OPEN</span>
+    <span class="closed">CLOSED</span>
+    <span class="path">PATH RESOLVED</span>
+    <span class="unsolvable">NO PATH</span>
+    <br><br>
+    <u>Cut corners=<span id="cutting"></span></u>
+    &nbsp;&nbsp;
+    <u>Calculation iterations: <span id="stepsTaken"></span></u>
+    <br><br>
+    <div id="grid"></div>
+    <script src="a-star-maze-walker.js"></script>
+</body>
+
+</html>
