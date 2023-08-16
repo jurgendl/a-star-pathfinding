@@ -155,19 +155,19 @@ body {
 }
 
 .wall-vertical {
-    border-right-color: red;
+    border-right-color: #e06b2c;
 }
 
 .wall-vertical-opposite {
-    border-left-color: red;
+    border-left-color: #e06b2c;
 }
 
 .wall-horizontal {
-    border-bottom-color: red;
+    border-bottom-color: #e06b2c;
 }
 
 .wall-horizontal-opposite {
-    border-top-color: red;
+    border-top-color: #e06b2c;
 }
 
 .cell>span {
