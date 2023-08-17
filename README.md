@@ -1,4 +1,4 @@
-# a-star-pathfinding
+# A* Pathfinding
 
 Showcase of A* pathfinding (not optimized for speed or memory).
 Supports obstacles and walls.
