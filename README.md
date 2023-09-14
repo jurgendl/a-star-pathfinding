@@ -1,6 +1,6 @@
 # A* Pathfinding
 
-[Showcase](https://jurgendl.github.io/a-star-pathfinding/a-star-maze-walker.html) of A* pathfinding (not optimized for speed or memory).
+[Showcase](https://jurgendl.github.io/programming/a-star-pathfinding/a-star-maze-walker.html) of A* pathfinding (not optimized for speed or memory).
 Supports obstacles and walls.
 
 ## Without cutting corners
